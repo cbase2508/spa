@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+             
+     <persistence-unit name="postgresDS" transaction-type="RESOURCE_LOCAL">   
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.UserProfile</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.ResearchLabInfo</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.ResearchCenter</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.MriProtocol</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.MriScanner</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.StudyRecord</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.StudyTypes</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.StudyCollaborator</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.UserRoles</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.StudyAccess</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.CandidateRec</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.CandidateWeightRec</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.ParentRecord</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.MriSession</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.MriFileType</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.MriFile</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.MriDataType</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.StudyAccessLevelLov</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.MriFileHeader</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.StudyKeyWords</class>
+		 <class>gov.nih.ninds.bioinfo.mbrain.data.model.MriUserComments</class>
+		 
+        <properties>
+			
+            <!-- JDBC configuration -->
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://nindsdirbis6.ninds.nih.gov:5432/mscdb" />
+
+			<property name="javax.persistence.jdbc.user" value="mscdbdev1" />
+            <property name="javax.persistence.jdbc.password" value="mscdbdev1" />
+           <!-- <property name="javax.persistence.jdbc.user" value="mscadmin" />
+            <property name="javax.persistence.jdbc.password" value="mscadmin!23" />-->
+            <property name="hibernate.default_schema" value="mscdb" /> 
+            
+            <!-- Hibernate configuration -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            <property name="hibernate.hbm2ddl.auto" value="none" />
+            
+            <!--property name="hibernate.show_sql" value="true" /--> <!-- Show SQL in console -->
+            <!--property name="hibernate.format_sql" value="true" /--> <!-- Show SQL formatted -->
+            
+            <!-- Connection Pool configuration -->
+            <property name="hibernate.hikari.minimumIdle" value="5" />
+			<property name="hibernate.hikari.maximumPoolSize" value="10" />
+			<property name="hibernate.hikari.idleTimeout" value="30000" />
+			<!-- <property name="hibernate.connection.provider_class" value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider" /> -->
+			
+			
+			
+			
+
+			<!-- <property name="hibernate.connection.url" value="jdbc:postgresql:@nindsdirbis6.asdasdninds.nih.gov:5432:mscdb" />
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+			<property name="hibernate.connection.username" value="mscadmin" />
+			<property name="hibernate.connection.password" value="mscadmin!23" />
+			<property name="Log" value="DefaultLevel=WARN, Tool=INFO" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="none" /> -->
+		</properties>
+    </persistence-unit>
+    
+</persistence> 
