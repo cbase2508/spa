@@ -42,6 +42,6 @@
     "npm-auto-install-webpack-plugin": "^0.2.0",
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
-    "webpack": "^2.7.0"
+    "webpack": "^5.75.0"
   }
 }
